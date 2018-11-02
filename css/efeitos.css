@@ -1,0 +1,278 @@
+/*
+==========================
+  Navigation Tabs
+==========================
+*/
+
+.animais-descricao section{
+  display: none;
+}
+
+.animais-descricao section.ativo{
+  display: block;
+  animation: show .3s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px,0,0);
+  }
+
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+/*
+==========================
+  Accordion List
+==========================
+*/
+
+.faq-lista dt::after{
+  content: '⮧';
+  margin-left: 10px;
+}
+
+.faq-lista dt.ativo::after{
+  content: '⮥';
+}
+
+.faq-lista dd{
+  display: none;
+}
+
+.faq-lista dd.ativo{
+  display: block;
+  animation: slideDown .5s;
+}
+
+@keyframes slideDown{
+  from{
+    opacity: 0;
+    max-height: 0;
+  }
+
+  to{
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+/*
+==========================
+  Modal
+==========================
+*/
+
+.modal-container{
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container.ativo{
+  display: flex;
+}
+
+.modal-container.ativo .modal{
+  animation: modal .3s;
+}
+
+@keyframes modal{
+  from{
+    opacity: 0;
+    transform: translate3d(0,-30px,0);
+  }
+
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.modal{
+  background-color: white;
+  padding: 40px;
+  border: 10px solid #FB5;
+  box-shadow: 0 0 0 10px white;
+  position: relative;
+  min-width: 300px;
+}
+
+.fechar-modal{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  background-color: #E54;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.modal label{
+  font-family: 'IBM Plex Mono', monospace;
+  display: block;
+  font-weight: bold;
+  margin: 1rem 0 .5rem 0;
+}
+
+.modal input{
+  width: 100%;
+  padding: .7rem .5rem;
+  box-sizing: border-box;
+}
+
+.modal button[type='submit']{
+  display: block;
+  background-color: #E54;
+  border: none;
+  border-radius: 4px;
+  padding: .7rem 2rem;
+  font-size: 1rem;
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 1rem;
+}
+
+/*
+==========================
+  Menu Dropdown
+==========================
+*/
+
+.dropdown-container{
+  position: relative;
+}
+
+.dropdown-container .dropdown-menu{
+  display: none;
+}
+
+.dropdown-container:hover .dropdown-menu,
+.dropdown-container.ativo .dropdown-menu{
+  display: block;
+  animation: showUp .3s;
+}
+
+@keyframes showUp{
+  from {
+    opacity: 0;
+    transform: translate3d(0,30px,0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+
+.dropdown-menu{
+  position: absolute;
+  top: 38px;
+  background: #E54;
+  border: 2px solid #333;
+  z-index: 200;
+}
+
+.dropdown-menu::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #E54;
+}
+
+.dropdown-menu li a:hover{
+  color: white;
+}
+
+/*
+==========================
+  Menu Mobile
+==========================
+*/
+
+.btn-toggle{
+  display: none;
+}
+
+@media (max-width: 700px){
+  .btn-toggle{
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    z-index: 300;
+  }
+
+  .btn-toggle::before{
+    content: '';
+    display: inline-block;
+    height: 2px;
+    width: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px #fff, 0 -4px #fff;
+    margin-right: 4px;
+    transition: transform .3s;
+  }
+  
+  .btn-toggle.ativo::before{
+    transform: rotate(90deg);
+  }
+
+  #menu{
+    position: absolute;
+    background-color: #FB5;
+    width: 160px;
+    z-index: 200;
+    top: 0;
+    padding: 60px 0 20px 0;
+    display: none;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0, .2);
+  }
+
+  #menu.ativo{
+    display: block;
+    animation: show .3s forwards;
+  }
+
+  .dropdown-menu{
+    position: static;
+    border: none;
+  }
+
+  .dropdown-menu::before{
+    display: none;
+  }
+
+}

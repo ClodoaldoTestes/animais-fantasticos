@@ -1,0 +1,22 @@
+[
+	{
+		"nome" : "Lobos",
+		"total": 4570
+	},
+
+	{
+		"nome" : "Raposas",
+		"total": 5780
+	},
+
+	{
+		"nome" : "Esquilos",
+		"total": 2300
+	},
+
+	{
+		"nome" : "Ursos",
+		"total": 1459
+	}
+
+]
