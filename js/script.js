@@ -17,5 +17,3 @@ dropdownMenu();
 initMobileMenu();
 initFetchAnimais();
 initFetchBitcoin();
-
-console.log('testando o webpack');
