@@ -28,7 +28,7 @@ function initFetchAnimais(){
 		return div;
 	}
 
-	fetchAnimais('../animais.json');
+	fetchAnimais('./animais.json');
 }
 
 export default initFetchAnimais;
