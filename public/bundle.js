@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./js/modules/Modal.js":
+/*!*****************************!*\
+  !*** ./js/modules/Modal.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Modal; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Modal =\n/*#__PURE__*/\nfunction () {\n  function Modal(botaoAbrir, botaoFechar, modalContainer) {\n    _classCallCheck(this, Modal);\n\n    this.botaoAbrir = document.querySelector(botaoAbrir);\n    this.botaoFechar = document.querySelector(botaoFechar);\n    this.modalContainer = document.querySelector(modalContainer);\n    this.abrirModal = this.abrirModal.bind(this);\n    this.fecharModal = this.fecharModal.bind(this);\n    this.clickFora = this.clickFora.bind(this);\n  }\n\n  _createClass(Modal, [{\n    key: \"abrirModal\",\n    value: function abrirModal(event) {\n      event.preventDefault();\n      this.modalContainer.classList.add('ativo');\n    }\n  }, {\n    key: \"fecharModal\",\n    value: function fecharModal(event) {\n      event.preventDefault();\n      this.modalContainer.classList.remove('ativo');\n    }\n  }, {\n    key: \"clickFora\",\n    value: function clickFora(event) {\n      if (event.target == this.modalContainer) {\n        this.modalContainer.classList.remove('ativo');\n      }\n    }\n  }, {\n    key: \"init\",\n    value: function init() {\n      if (this.botaoAbrir && this.botaoFechar && this.modalContainer) {\n        this.botaoAbrir.addEventListener('click', this.abrirModal);\n        this.botaoFechar.addEventListener('click', this.fecharModal);\n        this.modalContainer.addEventListener('click', this.clickFora);\n      }\n    }\n  }]);\n\n  return Modal;\n}();\n\n\n\n//# sourceURL=webpack:///./js/modules/Modal.js?");
+
+/***/ }),
+
 /***/ "./js/modules/NavigationTabs.js":
 /*!**************************************!*\
   !*** ./js/modules/NavigationTabs.js ***!
@@ -170,18 +182,6 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction initMobileMenu() {\n
 
 /***/ }),
 
-/***/ "./js/modules/initModal.js":
-/*!*********************************!*\
-  !*** ./js/modules/initModal.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction initModal() {\n  var abrirModal = document.querySelector('.abrir-modal');\n  var fecharModal = document.querySelector('.fechar-modal');\n  var modalContainer = document.querySelector('.modal-container');\n  abrirModal.addEventListener('click', function (e) {\n    e.preventDefault();\n    modalContainer.classList.add('ativo');\n  });\n  fecharModal.addEventListener('click', function (e) {\n    e.preventDefault();\n    modalContainer.classList.remove('ativo');\n  });\n  modalContainer.addEventListener('click', function (e) {\n    if (e.target == modalContainer) {\n      modalContainer.classList.remove('ativo');\n    }\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (initModal);\n\n//# sourceURL=webpack:///./js/modules/initModal.js?");
-
-/***/ }),
-
 /***/ "./js/script.js":
 /*!**********************!*\
   !*** ./js/script.js ***!
@@ -190,7 +190,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction initModal() {\n  var
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollLink_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollLink.js */ \"./js/modules/ScrollLink.js\");\n/* harmony import */ var _modules_NavigationTabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/NavigationTabs.js */ \"./js/modules/NavigationTabs.js\");\n/* harmony import */ var _modules_initAccordionList_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/initAccordionList.js */ \"./js/modules/initAccordionList.js\");\n/* harmony import */ var _modules_initModal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/initModal.js */ \"./js/modules/initModal.js\");\n/* harmony import */ var _modules_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/dropdownMenu.js */ \"./js/modules/dropdownMenu.js\");\n/* harmony import */ var _modules_initMobileMenu_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/initMobileMenu.js */ \"./js/modules/initMobileMenu.js\");\n/* harmony import */ var _modules_initFetchAnimais_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/initFetchAnimais.js */ \"./js/modules/initFetchAnimais.js\");\n/* harmony import */ var _modules_initFetchBitcoin_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/initFetchBitcoin.js */ \"./js/modules/initFetchBitcoin.js\");\n\n\n\n\n\n\n\n\nvar scrollLink = new _modules_ScrollLink_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.menu a[href^=\"#\"]');\nscrollLink.init();\nvar navigationTabs = new _modules_NavigationTabs_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('.animais-lista li', '.animais-descricao section');\nnavigationTabs.init();\nObject(_modules_initAccordionList_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\nObject(_modules_initModal_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\nObject(_modules_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nObject(_modules_initMobileMenu_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\nObject(_modules_initFetchAnimais_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\nObject(_modules_initFetchBitcoin_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"])();\n\n//# sourceURL=webpack:///./js/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollLink_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollLink.js */ \"./js/modules/ScrollLink.js\");\n/* harmony import */ var _modules_NavigationTabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/NavigationTabs.js */ \"./js/modules/NavigationTabs.js\");\n/* harmony import */ var _modules_Modal_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Modal.js */ \"./js/modules/Modal.js\");\n/* harmony import */ var _modules_initAccordionList_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/initAccordionList.js */ \"./js/modules/initAccordionList.js\");\n/* harmony import */ var _modules_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/dropdownMenu.js */ \"./js/modules/dropdownMenu.js\");\n/* harmony import */ var _modules_initMobileMenu_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/initMobileMenu.js */ \"./js/modules/initMobileMenu.js\");\n/* harmony import */ var _modules_initFetchAnimais_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/initFetchAnimais.js */ \"./js/modules/initFetchAnimais.js\");\n/* harmony import */ var _modules_initFetchBitcoin_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/initFetchBitcoin.js */ \"./js/modules/initFetchBitcoin.js\");\n\n\n\n\n\n\n\n\nvar scrollLink = new _modules_ScrollLink_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.menu a[href^=\"#\"]');\nscrollLink.init();\nvar navigationTabs = new _modules_NavigationTabs_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('.animais-lista li', '.animais-descricao section');\nnavigationTabs.init();\nvar modal = new _modules_Modal_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]('.abrir-modal', '.fechar-modal', '.modal-container');\nmodal.init();\nObject(_modules_initAccordionList_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\nObject(_modules_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nObject(_modules_initMobileMenu_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\nObject(_modules_initFetchAnimais_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\nObject(_modules_initFetchBitcoin_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"])();\n\n//# sourceURL=webpack:///./js/script.js?");
 
 /***/ }),
 
