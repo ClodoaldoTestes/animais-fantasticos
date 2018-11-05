@@ -3,7 +3,6 @@ import NavigationTabs from './modules/NavigationTabs.js';
 import Modal from './modules/Modal.js';
 import MobileMenu from './modules/MobileMenu.js';
 import AccordionList from './modules/AccordionList.js';
-import dropdownMenu from './modules/dropdownMenu.js';
 import initFetchAnimais from './modules/initFetchAnimais.js';
 import initFetchBitcoin from './modules/initFetchBitcoin.js';
 
@@ -22,7 +21,6 @@ mobileMenu.init();
 const accordionList = new AccordionList('.faq-lista dt');
 accordionList.init();
 
-dropdownMenu();
 initFetchAnimais();
 initFetchBitcoin();
 
