@@ -1,9 +1,9 @@
 import ScrollLink from './modules/ScrollLink.js';
 import NavigationTabs from './modules/NavigationTabs.js';
 import Modal from './modules/Modal.js';
+import MobileMenu from './modules/MobileMenu.js';
 import initAccordionList from './modules/initAccordionList.js';
 import dropdownMenu from './modules/dropdownMenu.js';
-import initMobileMenu from './modules/initMobileMenu.js';
 import initFetchAnimais from './modules/initFetchAnimais.js';
 import initFetchBitcoin from './modules/initFetchBitcoin.js';
 
@@ -16,9 +16,12 @@ navigationTabs.init();
 const modal = new Modal('.abrir-modal', '.fechar-modal', '.modal-container');
 modal.init();
 
+const mobileMenu = new MobileMenu('.btn-toggle', '#menu');
+mobileMenu.init();
+
 initAccordionList();
 dropdownMenu();
-initMobileMenu();
 initFetchAnimais();
 initFetchBitcoin();
+
 
