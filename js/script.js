@@ -19,3 +19,4 @@ dropdownMenu();
 initMobileMenu();
 initFetchAnimais();
 initFetchBitcoin();
+
