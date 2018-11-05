@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./js/modules/AccordionList.js":
+/*!*************************************!*\
+  !*** ./js/modules/AccordionList.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return AccordionList; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar AccordionList =\n/*#__PURE__*/\nfunction () {\n  function AccordionList(accordion) {\n    _classCallCheck(this, AccordionList);\n\n    this.accordionList = document.querySelectorAll(accordion);\n    this.addEvent = this.addEvent.bind(this);\n  }\n\n  _createClass(AccordionList, [{\n    key: \"addEvent\",\n    value: function addEvent(event) {\n      var target = event.currentTarget;\n      target.classList.toggle('ativo');\n      target.nextElementSibling.classList.toggle('ativo');\n    }\n  }, {\n    key: \"init\",\n    value: function init() {\n      var _this = this;\n\n      this.accordionList.forEach(function (item) {\n        item.addEventListener('click', _this.addEvent);\n      });\n    }\n  }]);\n\n  return AccordionList;\n}();\n\n\n\n//# sourceURL=webpack:///./js/modules/AccordionList.js?");
+
+/***/ }),
+
 /***/ "./js/modules/MobileMenu.js":
 /*!**********************************!*\
   !*** ./js/modules/MobileMenu.js ***!
@@ -146,18 +158,6 @@ eval("__webpack_require__.r(__webpack_exports__);\nvar events = ['touchstart', '
 
 /***/ }),
 
-/***/ "./js/modules/initAccordionList.js":
-/*!*****************************************!*\
-  !*** ./js/modules/initAccordionList.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction initAccordionList() {\n  var accordionList = document.querySelectorAll('.faq-lista dt');\n  accordionList[0].classList.add('ativo');\n  accordionList[0].nextElementSibling.classList.add('ativo');\n  accordionList.forEach(function (item) {\n    item.addEventListener('click', function (e) {\n      var target = e.currentTarget;\n      target.classList.toggle('ativo');\n      target.nextElementSibling.classList.toggle('ativo');\n    });\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (initAccordionList);\n\n//# sourceURL=webpack:///./js/modules/initAccordionList.js?");
-
-/***/ }),
-
 /***/ "./js/modules/initFetchAnimais.js":
 /*!****************************************!*\
   !*** ./js/modules/initFetchAnimais.js ***!
@@ -190,7 +190,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction initFetchBitcoin() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollLink_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollLink.js */ \"./js/modules/ScrollLink.js\");\n/* harmony import */ var _modules_NavigationTabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/NavigationTabs.js */ \"./js/modules/NavigationTabs.js\");\n/* harmony import */ var _modules_Modal_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Modal.js */ \"./js/modules/Modal.js\");\n/* harmony import */ var _modules_MobileMenu_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/MobileMenu.js */ \"./js/modules/MobileMenu.js\");\n/* harmony import */ var _modules_initAccordionList_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/initAccordionList.js */ \"./js/modules/initAccordionList.js\");\n/* harmony import */ var _modules_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/dropdownMenu.js */ \"./js/modules/dropdownMenu.js\");\n/* harmony import */ var _modules_initFetchAnimais_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/initFetchAnimais.js */ \"./js/modules/initFetchAnimais.js\");\n/* harmony import */ var _modules_initFetchBitcoin_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/initFetchBitcoin.js */ \"./js/modules/initFetchBitcoin.js\");\n\n\n\n\n\n\n\n\nvar scrollLink = new _modules_ScrollLink_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.menu a[href^=\"#\"]');\nscrollLink.init();\nvar navigationTabs = new _modules_NavigationTabs_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('.animais-lista li', '.animais-descricao section');\nnavigationTabs.init();\nvar modal = new _modules_Modal_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]('.abrir-modal', '.fechar-modal', '.modal-container');\nmodal.init();\nvar mobileMenu = new _modules_MobileMenu_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]('.btn-toggle', '#menu');\nmobileMenu.init();\nObject(_modules_initAccordionList_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nObject(_modules_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\nObject(_modules_initFetchAnimais_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\nObject(_modules_initFetchBitcoin_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"])();\n\n//# sourceURL=webpack:///./js/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollLink_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollLink.js */ \"./js/modules/ScrollLink.js\");\n/* harmony import */ var _modules_NavigationTabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/NavigationTabs.js */ \"./js/modules/NavigationTabs.js\");\n/* harmony import */ var _modules_Modal_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Modal.js */ \"./js/modules/Modal.js\");\n/* harmony import */ var _modules_MobileMenu_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/MobileMenu.js */ \"./js/modules/MobileMenu.js\");\n/* harmony import */ var _modules_AccordionList_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/AccordionList.js */ \"./js/modules/AccordionList.js\");\n/* harmony import */ var _modules_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/dropdownMenu.js */ \"./js/modules/dropdownMenu.js\");\n/* harmony import */ var _modules_initFetchAnimais_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/initFetchAnimais.js */ \"./js/modules/initFetchAnimais.js\");\n/* harmony import */ var _modules_initFetchBitcoin_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/initFetchBitcoin.js */ \"./js/modules/initFetchBitcoin.js\");\n\n\n\n\n\n\n\n\nvar scrollLink = new _modules_ScrollLink_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.menu a[href^=\"#\"]');\nscrollLink.init();\nvar navigationTabs = new _modules_NavigationTabs_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('.animais-lista li', '.animais-descricao section');\nnavigationTabs.init();\nvar modal = new _modules_Modal_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]('.abrir-modal', '.fechar-modal', '.modal-container');\nmodal.init();\nvar mobileMenu = new _modules_MobileMenu_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]('.btn-toggle', '#menu');\nmobileMenu.init();\nvar accordionList = new _modules_AccordionList_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"]('.faq-lista dt');\naccordionList.init();\nObject(_modules_dropdownMenu_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\nObject(_modules_initFetchAnimais_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\nObject(_modules_initFetchBitcoin_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"])();\n\n//# sourceURL=webpack:///./js/script.js?");
 
 /***/ }),
 

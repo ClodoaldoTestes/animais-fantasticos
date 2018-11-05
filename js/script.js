@@ -2,7 +2,7 @@ import ScrollLink from './modules/ScrollLink.js';
 import NavigationTabs from './modules/NavigationTabs.js';
 import Modal from './modules/Modal.js';
 import MobileMenu from './modules/MobileMenu.js';
-import initAccordionList from './modules/initAccordionList.js';
+import AccordionList from './modules/AccordionList.js';
 import dropdownMenu from './modules/dropdownMenu.js';
 import initFetchAnimais from './modules/initFetchAnimais.js';
 import initFetchBitcoin from './modules/initFetchBitcoin.js';
@@ -19,7 +19,9 @@ modal.init();
 const mobileMenu = new MobileMenu('.btn-toggle', '#menu');
 mobileMenu.init();
 
-initAccordionList();
+const accordionList = new AccordionList('.faq-lista dt');
+accordionList.init();
+
 dropdownMenu();
 initFetchAnimais();
 initFetchBitcoin();
